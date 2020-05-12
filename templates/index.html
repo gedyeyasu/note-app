@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Simple Note App</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+			body {
+				text-align: center;
+			}
+
+			h2 {
+				color: blue;
+				}
+			h3 {
+				color:teal;
+			}
+			input{
+				height: 400;
+				width: 700;
+			}
+			
+		</style>
+</head>
+<body>
+		<h2>My Notes</h2>>
+		<ul>
+			
+			{% for notes in note %}
+
+				<li> {{ note }}  {{ date}} </li>
+
+			{% endfor %}
+		</ul>
+
+	<h3><i>Type your Notes below</i></h3>
+
+	<form action="{{url_for('index')}}" method="Post">
+		Note : <input type="textbox" name="note" placeholder="begin by typping your notes here">
+		<button>Add Note</button>
+		
+	</form>
+
+</body>
+</html>
